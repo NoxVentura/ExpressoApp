@@ -1,2 +1,0 @@
-# ExpressoApp
-Project Panda

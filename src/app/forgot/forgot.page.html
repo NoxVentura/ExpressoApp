@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>forgot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card-header style="text-align: center;">
+    <ion-card-title>Forgot password</ion-card-title>
+    <ion-card-subtitle> Please enter your email</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" type="text" class="resetEmail" placeholder="Please key in your email"></ion-input>
+  </ion-item>
+  </ion-card-content>
+  <ion-button  expand="block" shape="round" color="primary" class="resetBtn" (click)="resetPassword()">Reset Password</ion-button>
+</ion-content>

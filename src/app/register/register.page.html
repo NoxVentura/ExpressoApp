@@ -1,0 +1,126 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.16.0/umd.popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        #staff{display: none;}
+        #vendor{display: none;}
+    </style>
+    <script type="text/javascript" src="/assets/js/externalfunctions.js">
+        // function showUser() {
+        //     document.getElementById('user').style.display="none";
+        //     document.getElementById('staff').style.display="block";
+        // }
+        // function showStaff() {
+        //     document.getElementById('user').style.display="block";
+        //     document.getElementById('staff').style.display="none";
+        // }
+    </script>
+</head>
+<ion-content>
+    <ion-button class="backBtn" [routerLink]="['/login']">Back</ion-button>
+  <ion-card>
+      <ion-card-header>
+        <div class="container">
+            <img src="./assets/icon/favicon.png" class="logoicon"/>
+            <p class="title">Espresso</p>
+        </div>
+        <button class="btn btn-primary" (click)="CallshowUser()">User</button>
+        <button class="btn btn-primary" (click)="CallshowStaff()">Staff</button>
+        <button class="btn btn-primary" (click)="CallshowVendor()">Vendor</button>
+       
+        
+      </ion-card-header>
+      <ion-card-content class="ion-padding" text-align="ion-text-center" id="user">
+          <ion-list>
+              <ion-item>
+                  <ion-label position="floating">Name</ion-label>
+                  <ion-input [(ngModel)]="name" type="text" class="regName" placeholder="Please key in your username"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input [(ngModel)]="email" type="text" class="regEmail" placeholder="Please key in your email"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" class="regPassword" placeholder="Please key in your password"></ion-input>
+                  <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Confirm Password</ion-label>
+                  <ion-input [(ngModel)]="confirmPassword" [type]="showPassword ? 'text' : 'password'" (ionChange)="checkPassword()" class="regCfmPassword" placeholder="Please re-enter your password"></ion-input>
+                  <!-- <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon> -->
+                  <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match!</ion-text>
+                  <ion-text *ngIf="password &&passwordMatch" color="success">Password match!</ion-text>
+              </ion-item>
+          </ion-list>
+          <ion-button [disabled]="!passwordMatch" expand="block" shape="round" color="primary" class="registerBtn" (click)="registerUser()">Register</ion-button>
+      </ion-card-content>
+
+    <ion-card-content class="ion-padding" text-align="ion-text-center" id="staff">
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input [(ngModel)]="name" type="text" class="regName" placeholder="Please key in your username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input [(ngModel)]="email" type="text" class="regEmail" placeholder="Please key in your email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Staff Number</ion-label>
+                <ion-input [(ngModel)]="staffNum" type="text" class="regStaffNum" placeholder="Please key in your Staff Number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" class="regPassword" placeholder="Please key in your password"></ion-input>
+                <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Confirm Password</ion-label>
+                <ion-input [(ngModel)]="confirmPassword" [type]="showPassword ? 'text' : 'password'" (ionChange)="checkPassword()" class="regCfmPassword" placeholder="Please re-enter your password"></ion-input>
+                <!-- <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon> -->
+                <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match!</ion-text>
+                <ion-text *ngIf="password &&passwordMatch" color="success">Password match!</ion-text>
+            </ion-item>
+        </ion-list>
+        <ion-button [disabled]="!passwordMatch" expand="block" shape="round" color="primary" class="registerBtn" (click)="registerStaff()">Register</ion-button>
+    </ion-card-content>
+
+    <ion-card-content class="ion-padding" text-align="ion-text-center" id="vendor">
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input [(ngModel)]="name" type="text" class="regName" placeholder="Please key in your username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input [(ngModel)]="email" type="text" class="regEmail" placeholder="Please key in your email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Vendor Number</ion-label>
+                <ion-input [(ngModel)]="vendorNum" type="text" class="regVendorNum" placeholder="Please key in your Vendor Number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Store Name</ion-label>
+                <ion-input [(ngModel)]="vendorStore" type="text" class="regVendorStore" placeholder="Please key in your Store Name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" class="regPassword" placeholder="Please key in your password"></ion-input>
+                <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Confirm Password</ion-label>
+                <ion-input [(ngModel)]="confirmPassword" [type]="showPassword ? 'text' : 'password'" (ionChange)="checkPassword()" class="regCfmPassword" placeholder="Please re-enter your password"></ion-input>
+                <!-- <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon> -->
+                <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match!</ion-text>
+                <ion-text *ngIf="password &&passwordMatch" color="success">Password match!</ion-text>
+            </ion-item>
+        </ion-list>
+        <ion-button [disabled]="!passwordMatch" expand="block" shape="round" color="primary" class="registerBtn" (click)="registerVendor()">Register</ion-button>
+    </ion-card-content> 
+     
+  </ion-card>
+</ion-content>
