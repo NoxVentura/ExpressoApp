@@ -9,12 +9,7 @@ import { HomestaffPageRoutingModule } from './homestaff-routing.module';
 import { HomestaffPage } from './homestaff.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomestaffPageRoutingModule
-  ],
-  declarations: [HomestaffPage]
+  imports: [CommonModule, FormsModule, IonicModule, HomestaffPageRoutingModule],
+  declarations: [HomestaffPage],
 })
 export class HomestaffPageModule {}

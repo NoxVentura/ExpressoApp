@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Order History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="secondary">
+    <ion-card-header>
+      <ion-card-subtitle>Paid</ion-card-subtitle>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Yong Tau Foo &times; 1</ion-label>
+          <ion-text>$4.00</ion-text>
+        </ion-item>
+      </ion-list>
+      <hr />
+      <ion-text>
+        Total Price:
+        <h1>$4.00</h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="danger">
+    <ion-card-header>
+      <ion-card-subtitle>Declined</ion-card-subtitle>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Yong Tau Foo &times; 1</ion-label>
+          <ion-text>$4.00</ion-text>
+        </ion-item>
+      </ion-list>
+      <hr />
+      <ion-text>
+        Total Price:
+        <h1>$4.00</h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="warning">
+    <ion-card-header>
+      <ion-card-subtitle>Preparing</ion-card-subtitle>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Yong Tau Foo &times; 1</ion-label>
+          <ion-text>$4.00</ion-text>
+        </ion-item>
+      </ion-list>
+      <hr />
+      <ion-text>
+        Total Price:
+        <h1>$4.00</h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="success">
+    <ion-card-header>
+      <ion-card-subtitle>Ready</ion-card-subtitle>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Yong Tau Foo &times; 1</ion-label>
+          <ion-text>$4.00</ion-text>
+        </ion-item>
+      </ion-list>
+      <hr />
+      <ion-text>
+        Total Price:
+        <h1>$4.00</h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Ordered</ion-card-subtitle>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Yong Tau Foo &times; 1</ion-label>
+          <ion-text>$4.00</ion-text>
+        </ion-item>
+      </ion-list>
+      <hr />
+      <ion-text>
+        Total Price:
+        <h1>$4.00</h1>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card-content>
+    <ion-button color="" expand="block">
+      <ion-icon name="back"></ion-icon>
+      <ion-text>Back to Home</ion-text>
+    </ion-button>
+  </ion-card-content>
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/homestaff']">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/product-list']">
+        <ion-icon name="pizza"></ion-icon>
+        <ion-label>Menu</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/cart']">
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>Cart</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/order-history']">
+        <ion-icon name="basket"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/accountstaff']">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

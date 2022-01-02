@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { NavController, AlertController, ToastController, LoadingController } from '@ionic/angular';
+import {
+  NavController,
+  AlertController,
+  ToastController,
+  LoadingController,
+} from '@ionic/angular';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserService } from '../user.service';
 
@@ -12,12 +17,11 @@ import { UserService } from '../user.service';
   styleUrls: ['./accountvendor.page.scss'],
 })
 export class AccountvendorPage implements OnInit {
-
   Uid: any;
-  username:string;
-  useremail:string;
+  username: string;
+  useremail: string;
   vendorNum: string;
-  vendorStore:string;
+  vendorStore: string;
 
   constructor(
     private userService: UserService,
@@ -28,47 +32,46 @@ export class AccountvendorPage implements OnInit {
     private toaster: ToastController,
     private firestore: AngularFirestore,
     private loadingCtrl: LoadingController
-  ) { }
+  ) {}
 
   ngOnInit() {
-    const auth = getAuth()
+    const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        this.Uid = user.uid
+        this.Uid = user.uid;
         //const useremail = user.email
         //console.log(this.Uid, useremail)
-        this.firestore.collection('Vendors').doc(this.Uid).snapshotChanges().forEach(user => {
-
-          this.username = user.payload.data()["name"]
-          this.useremail = user.payload.data()["email"]
-          this.vendorStore = user.payload.data()["vendorStore"]
-          this.vendorNum = user.payload.data()["vendorNum"]
-          console.log(user.payload.data()['name'])
-          // userdata = user.payload.data.toString()
-          // user.payload.data.toString()
-
+        this.firestore
+          .collection('Vendors')
+          .doc(this.Uid)
+          .snapshotChanges()
+          .forEach((user) => {
+            this.username = user.payload.data()['name'];
+            this.useremail = user.payload.data()['email'];
+            this.vendorStore = user.payload.data()['vendorStore'];
+            this.vendorNum = user.payload.data()['vendorNum'];
+            console.log(user.payload.data()['name']);
+            // userdata = user.payload.data.toString()
+            // user.payload.data.toString()
+          });
+      }
+    });
+    this.userService.userDetails().subscribe(
+      (res) => {
+        if (res !== null) {
+          this.useremail = res.email;
+        } else {
+          this.navCtrl.navigateBack('');
         }
-
-
-        )
-      }
-
-    })
-    this.userService.userDetails().subscribe(res => {
-      if (res !== null) {
-        this.useremail = res.email;
-      } else {
-        this.navCtrl.navigateBack('');
-      }
-    }, err => {
-
-    })
+      },
+      (err) => {}
+    );
   }
 
   logout() {
     this.angularFireAuth.signOut().then(() => {
-      this.router.navigate(['/login'])
-    })
+      this.router.navigate(['/login']);
+    });
   }
 
   async toast(message, status) {
@@ -76,38 +79,44 @@ export class AccountvendorPage implements OnInit {
       message: message,
       position: 'top',
       color: status,
-      duration: 2000
+      duration: 2000,
     });
 
     toast.present();
   }
 
-  async update(){
+  async update() {
     const loading = await this.loadingCtrl.create({
-      message: "updating...",
-      spinner: "crescent",
-      showBackdrop: true
+      message: 'updating...',
+      spinner: 'crescent',
+      showBackdrop: true,
     });
 
     loading.present();
 
-    (await this.angularFireAuth.currentUser).updateEmail(this.useremail).then(async ()=>{
-     (await this.angularFireAuth.currentUser).sendEmailVerification();
-     console.log("auth updated")
-     
-    })
-    this.firestore.collection('Vendors').doc(this.Uid).set({
-      'name': this.username, 
-      'email':this.useremail, 
-      'vendorNum' : this.vendorNum
-    }, {merge:true})
-    .then(()=>{
+    (await this.angularFireAuth.currentUser)
+      .updateEmail(this.useremail)
+      .then(async () => {
+        (await this.angularFireAuth.currentUser).sendEmailVerification();
+        console.log('auth updated');
+      });
+    this.firestore
+      .collection('Vendors')
+      .doc(this.Uid)
+      .set(
+        {
+          name: this.username,
+          email: this.useremail,
+          vendorNum: this.vendorNum,
+        },
+        { merge: true }
+      )
+      .then(() => {
         loading.dismiss();
-      this.toast('update sucess', 'success')
-      
-      
-      this.router.navigate['/login']
-    })
+        this.toast('update sucess', 'success');
+
+        this.router.navigate['/login'];
+      });
   }
 
   async delete(): Promise<void> {
@@ -117,20 +126,19 @@ export class AccountvendorPage implements OnInit {
         {
           text: 'Cancel',
           role: 'cancel',
-          handler: yes => {
+          handler: (yes) => {
             console.log('Confirm Cancel:', yes);
           },
         },
         {
           text: 'Delete',
           handler: async () => {
-            (await this.angularFireAuth.currentUser).delete()
-            this.userService.deleteVendor(this.Uid)
+            (await this.angularFireAuth.currentUser).delete();
+            this.userService.deleteVendor(this.Uid);
           },
         },
       ],
     });
-    await alert.present()
+    await alert.present();
   }
-
 }

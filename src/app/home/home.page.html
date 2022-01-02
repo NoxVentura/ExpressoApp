@@ -1,21 +1,61 @@
-<ion-content class="ion-padding ion-text-center">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home Page</ion-title>
+  </ion-toolbar>
+</ion-header>
 
- <p> Home Page for user</p>
- 
-  
- 
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <strong>Quick Search</strong>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel">
+      </ion-searchbar>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Stalls/categories -->
+    <ion-card-header>
+      <strong>Categories</strong>
+    </ion-card-header>
+
+  <!-- *ngFor="let stall of stalls" -->
+  <ion-row>
+    <ion-col size="6">
+      <ion-card>
+        <img
+          src="https://images.hdqwalls.com/wallpapers/true-damage-akali-4k-lz.jpg"
+        />
+        <ion-card-header>
+          <ion-card-title>Yong Tau Foo</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
+
 <ion-toolbar>
-    <ion-tabs>
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button [routerLink]="['/home']">
-          <ion-icon name="home"></ion-icon>
-          <ion-label>Home</ion-label>
-        </ion-tab-button>
-        <ion-tab-button [routerLink]="['/account']">
-          <ion-icon name="person"></ion-icon>
-          <ion-label>Account</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/account']">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/order-history']">
+        <ion-icon name="basket"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/cart']">
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>Cart</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-toolbar>

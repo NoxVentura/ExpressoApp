@@ -5,15 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBL0Gml3Ue2Yh2Hj0eKvYaSSQHZkF6WXF8",
-    authDomain: "espresso-67d40.firebaseapp.com",
-    projectId: "espresso-67d40",
-    storageBucket: "espresso-67d40.appspot.com",
-    messagingSenderId: "1048660442787",
-    appId: "1:1048660442787:web:72713c6147f1af53b90916",
-    measurementId: "G-X902JKL6C2"
- 
-  }
+    apiKey: 'AIzaSyBL0Gml3Ue2Yh2Hj0eKvYaSSQHZkF6WXF8',
+    authDomain: 'espresso-67d40.firebaseapp.com',
+    projectId: 'espresso-67d40',
+    storageBucket: 'espresso-67d40.appspot.com',
+    messagingSenderId: '1048660442787',
+    appId: '1:1048660442787:web:72713c6147f1af53b90916',
+    measurementId: 'G-X902JKL6C2',
+  },
 };
 
 /*

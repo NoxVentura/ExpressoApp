@@ -6,8 +6,8 @@ import { HomestaffPage } from './homestaff.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomestaffPage
-  }
+    component: HomestaffPage,
+  },
 ];
 
 @NgModule({

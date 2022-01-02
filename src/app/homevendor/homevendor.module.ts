@@ -13,8 +13,8 @@ import { HomevendorPage } from './homevendor.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomevendorPageRoutingModule
+    HomevendorPageRoutingModule,
   ],
-  declarations: [HomevendorPage]
+  declarations: [HomevendorPage],
 })
 export class HomevendorPageModule {}

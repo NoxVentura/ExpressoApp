@@ -1,11 +1,18 @@
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudfare.com/ajax/libs/popper.js/1.16.0/umd.popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style type="text/css">
-      #staffLogin{display: none;}
-      #vendorLogin{display: none;}
+    #staffLogin {
+      display: none;
+    }
+    #vendorLogin {
+      display: none;
+    }
   </style>
   <!-- <script type="text/javascript" src="/assets/js/externalfunctions.js">
       function showUserLogin() {
@@ -20,82 +27,169 @@
   </script> -->
 </head>
 <ion-content>
-  <style>
-     
-
-  </style>
-<ion-card>
+  <style></style>
+  <ion-card>
     <ion-card-header>
       <div class="container">
-          <img src="./assets/icon/favicon.png" class="logoicon"/>
-          <p class="title">Espresso</p>
+        <img src="./assets/icon/favicon.png" class="logoicon" />
+        <p class="title">Espresso</p>
       </div>
-      <button class="btn btn-primary" (click)="CallshowUserLogin()">User</button>
-      <button class="btn btn-primary" (click)="CallshowStaffLogin()">Staff</button>
-      <button class="btn btn-primary" (click)="CallshowVendorLogin()">Vendor</button>
-     
-      
+      <button class="btn btn-primary" (click)="CallshowUserLogin()">
+        User
+      </button>
+      <button class="btn btn-primary" (click)="CallshowStaffLogin()">
+        Staff
+      </button>
+      <button class="btn btn-primary" (click)="CallshowVendorLogin()">
+        Vendor
+      </button>
     </ion-card-header>
-    <ion-card-content class="ion-padding" text-align="ion-text-center" id="userLogin">
-        <ion-list>
-            <ion-item>
-                <ion-label position="floating">Email</ion-label>
-                <ion-input [(ngModel)]="email" type="text" class="regEmail" placeholder="Please key in your email"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="floating">Password</ion-label>
-                <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" class="regPassword" placeholder="Please key in your password"></ion-input>
-                <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon>
-            </ion-item>
-        </ion-list>
-        <ion-button  expand="block" shape="round" color="primary" class="loginBtn" (click)="loginUser()">Login</ion-button>
+    <ion-card-content
+      class="ion-padding"
+      text-align="ion-text-center"
+      id="userLogin"
+    >
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            [(ngModel)]="email"
+            type="text"
+            class="regEmail"
+            placeholder="Please key in your email"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            [(ngModel)]="password"
+            [type]="showPassword ? 'text' : 'password'"
+            class="regPassword"
+            placeholder="Please key in your password"
+          ></ion-input>
+          <ion-icon
+            [name]="passwordToggleIcon"
+            color="black"
+            slot="end"
+            (click)="togglePassword()"
+          ></ion-icon>
+        </ion-item>
+      </ion-list>
+      <ion-button
+        expand="block"
+        shape="round"
+        color="primary"
+        class="loginBtn"
+        (click)="loginUser()"
+        >Login</ion-button
+      >
     </ion-card-content>
 
-  <ion-card-content class="ion-padding" text-align="ion-text-center" id="staffLogin">
+    <ion-card-content
+      class="ion-padding"
+      text-align="ion-text-center"
+      id="staffLogin"
+    >
       <ion-list>
-          
-          <ion-item>
-              <ion-label position="floating">Email</ion-label>
-              <ion-input [(ngModel)]="email" type="text" class="regEmail" placeholder="Please key in your email"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label position="floating">Staff Number</ion-label>
-              <ion-input [(ngModel)]="staffNum" type="text" class="regStaffNum" placeholder="Please key in your Staff Number"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label position="floating">Password</ion-label>
-              
-              <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" class="regPassword" placeholder="Please key in your password"></ion-input>
-              <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon>
-          </ion-item>
-          
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            [(ngModel)]="email"
+            type="text"
+            class="regEmail"
+            placeholder="Please key in your email"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Staff Number</ion-label>
+          <ion-input
+            [(ngModel)]="staffNum"
+            type="text"
+            class="regStaffNum"
+            placeholder="Please key in your Staff Number"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+
+          <ion-input
+            [(ngModel)]="password"
+            [type]="showPassword ? 'text' : 'password'"
+            class="regPassword"
+            placeholder="Please key in your password"
+          ></ion-input>
+          <ion-icon
+            [name]="passwordToggleIcon"
+            color="black"
+            slot="end"
+            (click)="togglePassword()"
+          ></ion-icon>
+        </ion-item>
       </ion-list>
-      <ion-button  expand="block" shape="round" color="primary" class="loginBtn" (click)="loginStaff()">Login</ion-button>
-  </ion-card-content> 
-   
-  <ion-card-content class="ion-padding" text-align="ion-text-center" id="vendorLogin">
-    <ion-list>
-        
+      <ion-button
+        expand="block"
+        shape="round"
+        color="primary"
+        class="loginBtn"
+        (click)="loginStaff()"
+        >Login</ion-button
+      >
+    </ion-card-content>
+
+    <ion-card-content
+      class="ion-padding"
+      text-align="ion-text-center"
+      id="vendorLogin"
+    >
+      <ion-list>
         <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input [(ngModel)]="email" type="text" class="regEmail" placeholder="Please key in your email"></ion-input>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            [(ngModel)]="email"
+            type="text"
+            class="regEmail"
+            placeholder="Please key in your email"
+          ></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label position="floating">Vendor Number</ion-label>
-            <ion-input [(ngModel)]="vendorNum" type="text" class="regVendorNum" placeholder="Please key in your Vendor Number"></ion-input>
+          <ion-label position="floating">Vendor Number</ion-label>
+          <ion-input
+            [(ngModel)]="vendorNum"
+            type="text"
+            class="regVendorNum"
+            placeholder="Please key in your Vendor Number"
+          ></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            
-            <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" class="regPassword" placeholder="Please key in your password"></ion-input>
-            <ion-icon [name]="passwordToggleIcon" color="black" slot="end" (click)="togglePassword()"></ion-icon>
+          <ion-label position="floating">Password</ion-label>
+
+          <ion-input
+            [(ngModel)]="password"
+            [type]="showPassword ? 'text' : 'password'"
+            class="regPassword"
+            placeholder="Please key in your password"
+          ></ion-input>
+          <ion-icon
+            [name]="passwordToggleIcon"
+            color="black"
+            slot="end"
+            (click)="togglePassword()"
+          ></ion-icon>
         </ion-item>
-        
-    </ion-list>
-    <ion-button  expand="block" shape="round" color="primary" class="loginBtn" (click)="loginVendor()">Login</ion-button>
-</ion-card-content> 
- 
-</ion-card>
-<a [routerLink]="['/forgot']"> Forgot password?</a> 
-<p>Dont have an account? click <a [routerLink]="['/register']">here</a> to register!</p>
+      </ion-list>
+      <ion-button
+        expand="block"
+        shape="round"
+        color="primary"
+        class="loginBtn"
+        (click)="loginVendor()"
+        >Login</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+  <a [routerLink]="['/forgot']"> Forgot password?</a>
+  <p>
+    Dont have an account? click <a [routerLink]="['/register']">here</a> to
+    register!
+  </p>
 </ion-content>

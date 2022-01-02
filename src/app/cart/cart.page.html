@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Order summary</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-col size="6">
+          <ion-text><strong>Yong Tau Foo</strong></ion-text>
+        </ion-col>
+        <ion-col size="6">
+          <p>Subtotal <strong>$30</strong></p>
+          <p>Surcharge <strong>$40</strong></p>
+          <p>Total: <strong>$40</strong></p>
+        </ion-col>
+      </ion-item>
+
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Not done ordering yet?</ion-label>
+          <!-- Navigate back to cart page -->
+          <ion-button>Edit Order</ion-button>
+        </ion-list-header>
+
+        <!-- All products go here -->
+        <ion-item>
+          <ion-label>Yong Tau Foo &times; 1</ion-label>
+          <ion-text><strong>$4.00</strong></ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/homestaff']">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/product-list']">
+        <ion-icon name="pizza"></ion-icon>
+        <ion-label>Menu</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/cart']">
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>Cart</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/order-history']">
+        <ion-icon name="basket"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/accountstaff']">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

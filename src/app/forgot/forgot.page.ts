@@ -11,53 +11,50 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class ForgotPage implements OnInit {
   email: string;
-  password:string;
+  password: string;
 
-  constructor
-  (
-    private angularfireauth :AngularFireAuth,
-    private loadingCtrl: LoadingController, 
-    private router: Router, 
+  constructor(
+    private angularfireauth: AngularFireAuth,
+    private loadingCtrl: LoadingController,
+    private router: Router,
     private toaster: ToastController,
     private angularfirestore: AngularFirestore
-  ) { }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  async resetPassword(){
-    if(this.email)
-    {
+  async resetPassword() {
+    if (this.email) {
       const loading = await this.loadingCtrl.create({
-        message: "Sending reset password link...",
+        message: 'Sending reset password link...',
         spinner: 'crescent',
-        showBackdrop: true
+        showBackdrop: true,
       });
       loading.present();
 
-      this.angularfireauth.sendPasswordResetEmail(this.email)
-      .then(()=>{
-        loading.dismiss();
-        this.toast('Please check your email for the reset link!','sucess');
-        this.router.navigate(['/login']);
-       // this.angularfirestore.collection('users').doc(this.email).set({password: this.password})
-      })
-      .catch((error)=>{
-        loading.dismiss();
-        this.toast(error.message, 'danger')
-      })
-    }else{
+      this.angularfireauth
+        .sendPasswordResetEmail(this.email)
+        .then(() => {
+          loading.dismiss();
+          this.toast('Please check your email for the reset link!', 'sucess');
+          this.router.navigate(['/login']);
+          // this.angularfirestore.collection('users').doc(this.email).set({password: this.password})
+        })
+        .catch((error) => {
+          loading.dismiss();
+          this.toast(error.message, 'danger');
+        });
+    } else {
       this.toast('Please enter your email address!', 'danger');
     }
   }
 
-  async toast(message, status)
-  {
+  async toast(message, status) {
     const toast = await this.toaster.create({
-      message:message, 
+      message: message,
       position: 'top',
-      color:status,
-      duration:2000
+      color: status,
+      duration: 2000,
     });
 
     toast.present();
