@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'product-list',
     pathMatch: 'full',
   },
   {
@@ -17,7 +17,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule),
   },
-
   {
     path: 'register',
     loadChildren: () =>
@@ -75,23 +74,32 @@ const routes: Routes = [
   },
   {
     path: 'inventory',
-    loadChildren: () => import('./inventory/inventory.module').then( m => m.InventoryPageModule)
+    loadChildren: () =>
+      import('./inventory/inventory.module').then((m) => m.InventoryPageModule),
   },
   {
     path: 'order-confirm',
-    loadChildren: () => import('./order-confirm/order-confirm.module').then( m => m.OrderConfirmPageModule)
+    loadChildren: () =>
+      import('./order-confirm/order-confirm.module').then(
+        (m) => m.OrderConfirmPageModule
+      ),
   },
   {
     path: 'edit-product',
-    loadChildren: () => import('./edit-product/edit-product.module').then( m => m.EditProductPageModule)
+    loadChildren: () =>
+      import('./edit-product/edit-product.module').then(
+        (m) => m.EditProductPageModule
+      ),
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+    loadChildren: () =>
+      import('./cart/cart.module').then((m) => m.CartPageModule),
   },
   {
     path: 'product',
-    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
+    loadChildren: () =>
+      import('./product/product.module').then((m) => m.ProductPageModule),
   },
 ];
 

@@ -103,14 +103,16 @@ export class LoginPage implements OnInit {
         .loginStaff(this.email, this.password, this.staffNum)
         .then(() => {
           // loading.dismiss();
-          // //get all user
-          // const ref = this.firestore.collection('SingtelStaff').snapshotChanges().forEach(user=>{
-          //        return user.map(a=>{
-          //         const userdata =a.payload.doc.data()
-          //         const id=a.payload.doc.id
-          //          })
-          //        }
-          //      )
+          // get all user
+          /* const ref = this.firestore
+              .collection('SingtelStaff')
+              .snapshotChanges()
+              .forEach((user) => {
+                return user.map((a) => {
+                  const userdata = a.payload.doc.data();
+                  const id = a.payload.doc.id;
+                });
+              }); */
         })
 
         .catch((error) => {
@@ -127,9 +129,9 @@ export class LoginPage implements OnInit {
   async loginVendor() {
     if (this.email && this.password && this.vendorNum) {
       // const loading = await this.loadingCtrl.create({
-      //   message: "logging in...",
-      //   spinner: "crescent",
-      //   showBackdrop: true
+      //   message: 'logging in...',
+      //   spinner: 'crescent',
+      //   showBackdrop: true,
       // });
 
       // loading.present();
@@ -139,18 +141,20 @@ export class LoginPage implements OnInit {
         .then(() => {
           //loading.dismiss();
           //get all user
-          //   const ref = this.firestore.collection('Vendors').snapshotChanges().forEach(user=>{
-          //          return user.map(a=>{
-          //           const userdata =a.payload.doc.data()
-          //           const id=a.payload.doc.id
-          //            })
-          //          }
-          //        )
+          // const ref = this.firestore
+          //   .collection('Vendors')
+          //   .snapshotChanges()
+          //   .forEach((user) => {
+          //     return user.map((a) => {
+          //       const userdata = a.payload.doc.data();
+          //       const id = a.payload.doc.id;
+          //     });
+          //   });
         })
 
         .catch((error) => {
           // loading.dismiss();
-          // this.toast('error'+ error.message,'danger');
+          // this.toast('error' + error.message, 'danger');
           console.log(error.message);
         });
     } else {
@@ -203,9 +207,11 @@ export class LoginPage implements OnInit {
   CallshowUserLogin() {
     showUserLogin();
   }
+
   CallshowStaffLogin() {
     showStaffLogin();
   }
+
   CallshowVendorLogin() {
     showVendorLogin();
   }

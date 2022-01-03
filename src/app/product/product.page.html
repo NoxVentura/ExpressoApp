@@ -6,14 +6,72 @@
 
 <ion-content>
   <ion-card>
-    <img src="./madison.jpg" />
+    <img
+      src="http://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2016/11/Yong-Tau-Foo-credit-5-via-Shutterstock1.jpg"
+    />
     <ion-card-header>
-      <ion-card-subtitle>Destination</ion-card-subtitle>
-      <ion-card-title>Madison, WI</ion-card-title>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
+      <ion-card-title><strong>$3.00</strong></ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
-      Madison was named the capital of the Wisconsin Territory in 1836.
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Order options</ion-label>
+        </ion-list-header>
+
+        <!-- Quantity -->
+        <ion-item>
+          <ion-label>Quantity</ion-label>
+          <ion-input clearInput type="number" placeholder="3"></ion-input>
+        </ion-item>
+
+        <!-- Add ingredients -->
+        <ion-item>
+          <ion-label>Add ingredients</ion-label>
+          <ion-select
+            [interfaceOptions]="customOptions"
+            interface="action-sheet"
+            placeholder="Select an ingredient"
+          >
+            <ion-select-option value="ing1">Ingredient 1</ion-select-option>
+            <ion-select-option value="ing2">Ingredient 2</ion-select-option>
+            <ion-select-option value="ing3">Ingredient 3</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Add ingredients -->
+        <ion-item>
+          <ion-label>Dry/Soup</ion-label>
+          <ion-select
+            [interfaceOptions]="customOptions"
+            interface="action-sheet"
+            placeholder="Select soup"
+          >
+            <ion-select-option value="ing1">Dry w/ chilli</ion-select-option>
+            <ion-select-option value="ing2">Dry w/o chilli</ion-select-option>
+            <ion-select-option value="ing3">Soup</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Additional comments  -->
+        <ion-item>
+          <ion-label position="stacked">Add-ons / special</ion-label>
+          <ion-textarea placeholder="Type here"></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="secondary" (click)="addToCart()">
+            Add to Cart
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="warning" (click)="checkOut()">
+            Check out
+          </ion-button>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

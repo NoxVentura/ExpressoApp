@@ -5,6 +5,7 @@ export interface Order {
   products: {
     productID: number;
     quantity: number;
+    options?: object;
   }[];
   totalPrice: number;
   discountPrice: number;

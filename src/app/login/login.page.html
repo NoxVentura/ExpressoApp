@@ -81,8 +81,9 @@
         color="primary"
         class="loginBtn"
         (click)="loginUser()"
-        >Login</ion-button
       >
+        Login
+      </ion-button>
     </ion-card-content>
 
     <ion-card-content
@@ -111,7 +112,6 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-
           <ion-input
             [(ngModel)]="password"
             [type]="showPassword ? 'text' : 'password'"
@@ -162,7 +162,6 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-
           <ion-input
             [(ngModel)]="password"
             [type]="showPassword ? 'text' : 'password'"
@@ -183,8 +182,9 @@
         color="primary"
         class="loginBtn"
         (click)="loginVendor()"
-        >Login</ion-button
       >
+        Login
+      </ion-button>
     </ion-card-content>
   </ion-card>
   <a [routerLink]="['/forgot']"> Forgot password?</a>

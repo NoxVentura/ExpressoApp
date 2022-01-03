@@ -8,33 +8,84 @@
   <!-- product list goes here -->
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
+      <ion-card-title>Yong Tau Foo</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-list-header>
-          <ion-label>New This Week</ion-label>
-          <ion-button>See All</ion-button>
-        </ion-list-header>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img [src]="image" />
-          </ion-avatar>
-          <ion-label>Item Avatar</ion-label>
-          
-          <ion-button
-            (click)="onClick()"
-            expand="block"
-            fill="clear"
-            shape="round"
-          >
-            Click me
-          </ion-button>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
   </ion-card>
+
+  <!-- Stalls/categories -->
+  <ion-card-header>
+    <strong>Categories</strong>
+  </ion-card-header>
+
+  <ion-row>
+    <!-- product -->
+    <ion-col size="6">
+      <ion-card>
+        <ion-card-header>
+          <img
+            src="http://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2016/11/Yong-Tau-Foo-credit-5-via-Shutterstock1.jpg"
+            alt="Yong Tau Foo"
+          />
+        </ion-card-header>
+        <ion-card-content>
+          <p>Yong Tau Foo</p>
+          <ion-card-title>$1.25</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card color="success">
+        <ion-card-header>
+          <img
+            src="http://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2016/11/Yong-Tau-Foo-credit-5-via-Shutterstock1.jpg"
+            alt="Yong Tau Foo"
+          />
+        </ion-card-header>
+        <ion-card-content>
+          <p>Yong Tau Foo</p>
+          <ion-card-title>
+            <span><strike>$1.25</strike></span
+            >&nbsp;
+            <span><strong>$0.75</strong></span>
+          </ion-card-title>
+          <ion-card-subtitle>Promotion</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card color="danger">
+        <ion-card-header>
+          <img
+            src="http://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2016/11/Yong-Tau-Foo-credit-5-via-Shutterstock1.jpg"
+            alt="Yong Tau Foo"
+          />
+        </ion-card-header>
+        <ion-card-content>
+          <p>Yong Tau Foo</p>
+          <ion-card-title><strike>$1.25</strike></ion-card-title>
+          <ion-card-subtitle>Out of stock</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card color="warning">
+        <ion-card-header>
+          <img
+            src="http://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2016/11/Yong-Tau-Foo-credit-5-via-Shutterstock1.jpg"
+            alt="Yong Tau Foo"
+          />
+        </ion-card-header>
+        <ion-card-content>
+          <p>Yong Tau Foo</p>
+          <ion-card-title>$1.25</ion-card-title>
+          <ion-card-subtitle>5 in stock</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
 
 <ion-toolbar>
