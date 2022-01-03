@@ -7,17 +7,29 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
+      <ion-card-title>Self Pick-up</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Pick up in</ion-label>
+        <ion-text><h2>10 mins</h2></ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
       <ion-card-title>Order summary</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-col size="6">
+        <ion-col size="8">
           <ion-text><strong>Yong Tau Foo</strong></ion-text>
         </ion-col>
-        <ion-col size="6">
-          <p>Subtotal <strong>$30</strong></p>
-          <p>Surcharge <strong>$40</strong></p>
-          <p>Total: <strong>$40</strong></p>
+        <ion-col size="4">
+          <p>Subtotal <strong>$3.00</strong></p>
+          <p>Surcharge <strong>$4.00</strong></p>
+          <p>Total: <strong>$4.00</strong></p>
         </ion-col>
       </ion-item>
 
@@ -34,6 +46,62 @@
           <ion-text><strong>$4.00</strong></ion-text>
         </ion-item>
       </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Payment Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Payment Method</ion-label>
+          <ion-select
+            value="cash"
+            interface="action-sheet"
+            placeholder="Select Payment Method"
+          >
+            <ion-select-option value="dash">Singtel Dash</ion-select-option>
+            <ion-select-option value="cash">Cash</ion-select-option>
+            <ion-select-option value="paynow">PayNow/PayLah</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Total Price</ion-label>
+      <h1><strong>$4.00</strong></h1>
+    </ion-item>
+    <!-- *ngIf="paymentMethod == 'dash'" -->
+    <ion-item>
+      <ion-label>Staff Discount</ion-label>
+      <h2><strong>$3.50</strong></h2>
+    </ion-item>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            expand="block"
+            color="primary"
+            onclick="window.location.href='/order-history'"
+          >
+            Place Order
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button
+            expand="block"
+            color="tertiary"
+            onclick="window.location.href='/order-history'"
+          >
+            Self Pick-up
+          </ion-button>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

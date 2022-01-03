@@ -1,9 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>product</ion-title>
+    <ion-title>Product</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <img src="./madison.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Destination</ion-card-subtitle>
+      <ion-card-title>Madison, WI</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+      Madison was named the capital of the Wisconsin Territory in 1836.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/homestaff']">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/product-list']">
+        <ion-icon name="pizza"></ion-icon>
+        <ion-label>Menu</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/cart']">
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>Cart</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/order-history']">
+        <ion-icon name="basket"></ion-icon>
+        <ion-label>Orders</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/accountstaff']">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Account</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

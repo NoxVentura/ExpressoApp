@@ -10,5 +10,6 @@ export interface Order {
   discountPrice: number;
   paymentMethod: string;
   queueNumber: number;
+  status: 'complete' | 'pending' | 'paid' | 'preparing' | 'cancelled';
   waitingTime: number;
 }

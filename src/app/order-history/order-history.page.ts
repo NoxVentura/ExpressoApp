@@ -23,6 +23,7 @@ export class OrderHistoryPage implements OnInit {
       paymentMethod: 'cash',
       queueNumber: 1,
       waitingTime: 0,
+      status: 'complete',
     },
   ];
 

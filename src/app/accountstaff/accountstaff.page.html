@@ -5,84 +5,121 @@
 </ion-header>
 
 <ion-content>
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">User Id</ion-label>
-        <ion-input
-          [(ngModel)]="Uid"
-          required
-          type="text"
-          name="uid"
-          disabled
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Staff Number</ion-label>
-        <ion-input
-          [(ngModel)]="this.staffNum"
-          required
-          type="text"
-          name="staffNum"
-          disabled
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Name</ion-label>
-        <ion-input
-          [(ngModel)]="this.username"
-          required
-          type="text"
-          name="name"
-        ></ion-input>
-        <!-- <ion-button expand="block" shape="round" color="primary" class="updateBtn" (click)="getUsername()">Get User</ion-button> -->
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input
-          [(ngModel)]="this.useremail"
-          required
-          type="text"
-          name="email"
-        ></ion-input>
-      </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Edit Account</ion-card-title>
+    </ion-card-header>
 
-      <!--<ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input [(ngModel)]="password" type="password" class="regPassword" placeholder="Please key in your password"></ion-input>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">User Id</ion-label>
+          <ion-input
+            [(ngModel)]="Uid"
+            required
+            type="text"
+            name="uid"
+            disabled
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Staff Number</ion-label>
+          <ion-input
+            [(ngModel)]="this.staffNum"
+            required
+            type="text"
+            name="staffNum"
+            disabled
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input
+            [(ngModel)]="this.username"
+            required
+            type="text"
+            name="name"
+          ></ion-input>
+          <!-- <ion-button expand="block" shape="round" color="primary" class="updateBtn" (click)="getUsername()">Get User</ion-button> -->
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            [(ngModel)]="this.useremail"
+            required
+            type="text"
+            name="email"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!--
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          [(ngModel)]="password"
+          type="password"
+          class="regPassword"
+          placeholder="Please key in your password"
+        ></ion-input>
       </ion-item>
-       <ion-item>
-          <ion-label position="floating">Confirm Password</ion-label>
-          <ion-input [(ngModel)]="confirmPassword" type="password" (ionChange)="checkPassword()" class="regCfmPassword" placeholder="Please re-enter your password"></ion-input>
-          <ion-text *ngIf="password &&!passwordMatch" color="danger">Password do not match!</ion-text>
-          <ion-text *ngIf="password &&passwordMatch" color="success">Password match!</ion-text>
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input
+          [(ngModel)]="confirmPassword"
+          type="password"
+          (ionChange)="checkPassword()"
+          class="regCfmPassword"
+          placeholder="Please re-enter your password"
+        ></ion-input>
+        <ion-text *ngIf="password &&!passwordMatch" color="danger"
+          >Password do not match!</ion-text
+        >
+        <ion-text *ngIf="password &&passwordMatch" color="success"
+          >Password match!</ion-text
+        >
       </ion-item> -->
+
       <ion-button
         expand="block"
-        shape="round"
         color="primary"
         class="updateBtn"
         (click)="update()"
-        >Update Profile</ion-button
       >
-    </ion-list>
-    <ion-button
-      expand="block"
-      shape="round"
-      color="primary"
-      class="logoutBtn"
-      (click)="logout()"
-      >Log Out</ion-button
-    >
-    <ion-button
-      expand="block"
-      shape="round"
-      color="primary"
-      class="deleteAccBtn"
-      (click)="delete()"
-      >Delete Account
-    </ion-button>
-  </ion-card-content>
+        Update Profile
+      </ion-button>
+
+      <hr />
+
+      <ion-list>
+        <ion-label>
+          <h2>Danger Zone</h2>
+        </ion-label>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button
+              expand="block"
+              color="warning"
+              class="logoutBtn"
+              (click)="logout()"
+            >
+              Log Out
+            </ion-button></ion-col
+          >
+          <ion-col size="6">
+            <ion-button
+              expand="block"
+              color="danger"
+              class="deleteAccBtn"
+              (click)="delete()"
+            >
+              Delete Account
+            </ion-button></ion-col
+          >
+        </ion-row>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-toolbar>
