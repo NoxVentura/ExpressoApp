@@ -1,7 +1,7 @@
 export interface Order {
   id: number;
   timestamp: Date;
-  store: string;
+  stall: string;
   products: {
     productID: number;
     quantity: number;

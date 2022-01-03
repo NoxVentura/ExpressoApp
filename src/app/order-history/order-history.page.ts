@@ -11,7 +11,7 @@ export class OrderHistoryPage implements OnInit {
     {
       id: 1,
       timestamp: new Date(),
-      store: 'Sushi Bar',
+      stall: 'Sushi Bar',
       products: [
         { productID: 1, quantity: 2 },
         { productID: 1, quantity: 2 },
